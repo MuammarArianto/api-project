@@ -24,6 +24,11 @@ try {
 } catch (error) {
     console.log(error);
 }
+
+app.get('/', async(req, res) => {
+    res.json({message: 'Hallo'})
+})
+
 app.use(express.json());
 app.use(cors());
 app.use(cookieParser());   
@@ -33,4 +38,5 @@ app.use('/public/images', express.static(path.join(__dirname, 'public/images')))
 app.use('/auth', RouteAuth);
 app.use('/rooms', RouteRooms);
 
-app.listen(5001,() => console.log("Server running at port 5001...."));
+const PORT = 5001;
+app.listen(process.env.PORT || PORT,() => console.log("Server running at port 5001...."));

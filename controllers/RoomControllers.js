@@ -48,7 +48,7 @@ export const createRoom = async(req, res) => {
             nama_room: nama,
             desc_room: desc,
             harga: harga,
-            image: `${req.protocol}://${req.get('host')}/public/images/${req.file.filename}`
+            gambar: `${req.protocol}://${req.get('host')}/public/images/${req.file.filename}`
         })
        }
 
