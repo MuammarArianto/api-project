@@ -26,9 +26,9 @@ export const getRooms = async(req, res) => {
 
 export const getRoomsById = async(req, res) => {
     try {
-        const response = await ModelRoom.findAll({where: {id_room: req.params.id}});
+        const response = await ModelRoom.findOne({where: {id_room: req.params.id}});
 
-        if(!response[0]) return res.status(404).json({message: "Room masih kosong!"});
+        if(!response) return res.status(404).json({message: "Room masih kosong!"});
 
         return res.status(200).json({response});
     } catch (error) {
