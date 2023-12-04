@@ -25,10 +25,6 @@ try {
     console.log(error);
 }
 
-app.get('/', async(req, res) => {
-    res.json({message: 'Hallo'})
-})
-
 app.use(express.json());
 app.use(cors());
 app.use(cookieParser());   
