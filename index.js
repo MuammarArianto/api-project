@@ -34,5 +34,9 @@ app.use('/public/images', express.static(path.join(__dirname, 'public/images')))
 app.use('/auth', RouteAuth);
 app.use('/rooms', RouteRooms);
 
+app.use('/', (req, res) => {
+    res.send('Welcome to the server')
+})
+
 const PORT = 5001;
 app.listen(process.env.PORT || PORT,() => console.log("Server running at port 5001...."));
