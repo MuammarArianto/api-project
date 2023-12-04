@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 import path, {dirname} from 'path';
 import { fileURLToPath } from "url";
 import db from "./configs/Database.js";
-// import Model from './models/ModelUser.js'
+import Model from './models/ModelUser.js'
 dotenv.config()
 
 // Router
@@ -20,7 +20,7 @@ const app = express()
 try {
     await db.authenticate();
     console.log("Database connected....");
-    // await Model.sync();    
+    await Model.sync();    
 } catch (error) {
     console.log(error);
 }
