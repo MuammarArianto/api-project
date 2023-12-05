@@ -36,5 +36,9 @@ app.use('/auth', RouteAuth);
 app.use('/rooms', RouteRooms);
 app.use('/reservation', RouteReservation);
 
+app.get('/', (req, res) => {
+    res.send('Hallo')
+})
+
 const PORT = 5001;
 app.listen(process.env.PORT || PORT,() => console.log("Server running at port 5001...."));
