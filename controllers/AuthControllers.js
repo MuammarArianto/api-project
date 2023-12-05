@@ -13,7 +13,7 @@ export const Register = async(req, res) => {
         if(checkEmail[0]) return res.status(409).json({message: "Email sudah terdaftar!"});
         const salt = await bcrypt.genSalt();
         const hashPassword = await bcrypt.hash(password, salt);
-
+        
         await ModelUser.create({
             username: username,
             email: email,

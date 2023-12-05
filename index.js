@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 import path, {dirname} from 'path';
 import { fileURLToPath } from "url";
 import db from "./configs/Database.js";
-import Model from './models/ModelReservation.js'
+import Model from './models/ModelUser.js'
 dotenv.config()
 
 // Router
