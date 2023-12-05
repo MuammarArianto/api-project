@@ -11,6 +11,7 @@ dotenv.config()
 // Router
 import RouteAuth from './routers/RouteAuth.js';
 import RouteRooms from './routers/RouteRooms.js';
+import RouteReservation from './routers/RouteReservation.js';
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -33,6 +34,7 @@ app.use('/public/images', express.static(path.join(__dirname, 'public/images')))
 
 app.use('/auth', RouteAuth);
 app.use('/rooms', RouteRooms);
+app.use('/reservation', RouteReservation);
 
 const PORT = 5001;
 app.listen(process.env.PORT || PORT,() => console.log("Server running at port 5001...."));
